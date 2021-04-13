@@ -5,6 +5,7 @@ public class startGame : MonoBehaviour
 {
 
     public TMPro.TextMeshProUGUI pressSpace;
+    public TMPro.TextMeshProUGUI levelNumber;
 
     // Update is called once per frame
     void Update()
@@ -19,5 +20,6 @@ public class startGame : MonoBehaviour
     private void startGameUI()
     {
         pressSpace.text = "";
+        levelNumber.text = "";
     }
 }

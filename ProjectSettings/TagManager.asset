@@ -9,6 +9,7 @@ TagManager:
   - Paddle
   - Blocks
   - EndBlock
+  - SoundEffects
   layers:
   - Default
   - TransparentFX
