@@ -19,15 +19,16 @@ public class CubeController : MonoBehaviour
 
     void Update()
     {
-        GoForward(Go);
-    }
-
-    private void GoForward(bool Go)
-    {
         if (Go)
         {
-            breakerCube.transform.position += Vector3.Normalize(forwardVector) * Time.deltaTime * forwardSpeed;
+            GoForward();
         }
+
+    }
+
+    private void GoForward()
+    {
+        breakerCube.transform.position += Vector3.Normalize(forwardVector) * Time.deltaTime * forwardSpeed;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,7 +51,7 @@ public class CubeController : MonoBehaviour
         }
         if (other.tag == "EndBlock")
         {
-            forwardVector = Vector3.zero;
+            Go = false;
             gameManager.GetComponent<GameController>().gameLost = true;
         }
     }

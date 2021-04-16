@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -7,6 +5,7 @@ public class GameController : MonoBehaviour
     public bool gameLost = false;
     public TMPro.TextMeshProUGUI pressSpace;
     public TMPro.TextMeshProUGUI levelNumber;
+    public GameObject levelLoader;
     private GameObject[] blocks; 
 
     // Update is called once per frame
@@ -29,5 +28,6 @@ public class GameController : MonoBehaviour
         levelNumber.text = text;
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Destroy(GameObject.FindGameObjectWithTag("Paddle"));
+        levelLoader.GetComponent<LevelLoader>().levelComplete = true;
     }
 }
